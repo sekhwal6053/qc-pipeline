@@ -48,11 +48,6 @@ For example:
 
 The input location is specified using `params.reads` in `nextflow.config`.
 
-Example:
-
-    params {
-        reads = '/path/to/raw/*_{1,2}.fastq.gz'
-    }
 
 ## Running the Pipeline
 
