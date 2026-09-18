@@ -46,9 +46,6 @@ For example:
     ERR103042_1.fastq.gz
     ERR103042_2.fastq.gz
 
-The input location is specified using `params.reads` in `nextflow.config`.
-
-
 ## Running the Pipeline
 
 Navigate to the pipeline directory:
