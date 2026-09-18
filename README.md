@@ -78,42 +78,6 @@ Final results are organized as:
 
 The individual FastQC HTML files contain quality-control reports for each FASTQ file. `multiqc_report.html` provides a combined summary of all FastQC results.
 
-## Jetstream2 Storage Configuration
-
-For the current ACCESS Jetstream2 environment, large sequencing datasets, Nextflow intermediate files, and Apptainer containers are stored on the persistent `ngs-data` volume rather than the VM root disk.
-
-Current organization:
-
-    /media/volume/ngs-data/
-    ├── projects/
-    │   └── qc-pipeline/
-    ├── containers/
-    ├── apptainer-cache/
-    ├── nextflow/
-    │   └── work/
-    └── references/
-
-The Nextflow work directory is configured as:
-
-    /media/volume/ngs-data/nextflow/work
-
-and Apptainer container/cache files are stored on the persistent data volume to prevent large files from filling the VM root disk.
-
-These paths are specific to the current Jetstream2 environment and can be changed for other computing environments.
-
-## Data
-
-Raw sequencing data and large analysis files are not included in this GitHub repository. Files such as FASTQ, BAM, SAM, Apptainer images, and Nextflow work files should remain on the analysis/storage system rather than being committed to GitHub.
-
-Examples:
-
-    *.fastq
-    *.fastq.gz
-    *.bam
-    *.sam
-    *.sif
-    work/
-
 ## Future Development
 
 This QC workflow is the first component of a larger modular NGS analysis pipeline. Additional DSL2 modules can be incorporated for preprocessing, alignment, quantification, and downstream analysis.
